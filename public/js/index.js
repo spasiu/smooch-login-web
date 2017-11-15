@@ -1,7 +1,10 @@
 'use strict';
 
+var feedback = $('#feedback')[0];
+
 $('.message a').click(function(){
    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+   feedback.innerHTML = ""
 });
 
 $('.login-action').click(function(e) {
@@ -21,6 +24,8 @@ $('.signup-action').click(function(e) {
 
 // call backend to signup
 function signup(username, password, name) {
+  feedback.innerHTML = ""
+  if(username && password && name){
   fetch('/signup', {
     method: 'post',
     headers: {
@@ -38,6 +43,11 @@ function signup(username, password, name) {
       return;
     })
     .then(() => console.log('signup', username));
+                feedback.innerHTML = 'Successfully signup: ' + username}
+    else{
+      console.log("put some info plz")
+      feedback.innerHTML = "put some info plz"
+    }
 }
 
 // call backend to login, then call login method of Smooch SDK with response params

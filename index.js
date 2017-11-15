@@ -13,6 +13,12 @@ const APP_SECRET = process.env.APP_SECRET;
 const APP_ID = process.env.APP_ID;
 const ACCOUNT_KEY_ID = process.env.ACCOUNT_KEY_ID;
 const ACCOUNT_SECRET = process.env.ACCOUNT_SECRET;
+console.log(ACCOUNT_KEY_ID)
+console.log(APP_SECRET)
+console.log(APP_ID)
+console.log(ACCOUNT_KEY_ID)
+console.log(ACCOUNT_SECRET)
+
 
 const smooch = new Smooch({
 	scope: 'account',
@@ -56,6 +62,8 @@ function loginHandler(req, res) {
 
 // signup user, calls Smooch to create a user and signs a JWT for smooch login
 function signupHandler(req, res) {
+  console.log(req.body.username)
+  
 	if (!req.body.username) {
 		res.status(400).json({ error: 'missing username' });
 	}
