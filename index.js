@@ -9,7 +9,7 @@ const jwt = require('jsonwebtoken');
 
 const PORT = process.env.PORT;
 const APP_KEY_ID = process.env.KEY_ID;
-const APP_SECRET = process.env.SECRET;
+const APP_SECRET = process.env.APP_SECRET;
 const APP_ID = process.env.APP_ID;
 const ACCOUNT_KEY_ID = process.env.ACCOUNT_KEY_ID;
 const ACCOUNT_SECRET = process.env.ACCOUNT_SECRET;
